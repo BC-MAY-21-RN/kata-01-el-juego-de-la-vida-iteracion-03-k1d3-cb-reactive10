@@ -69,7 +69,7 @@ for(let i=0; i<R; i++){
       for (let j = 0; j < this.matriz[i].length; j++) {
         line += this.matriz[i][j] + " ";
       }
-      console.log(line);
+      // console.log(line);
     }
     return "";
   }
@@ -81,7 +81,7 @@ for(let i=0; i<R; i++){
     });
 
     this.imprimirMatriz();
-    return "";
+    return this.matriz
   }
 
   siguienteGeneracion() {
@@ -109,7 +109,8 @@ for(let i=0; i<R; i++){
 
     for (var i = -1; i < 1; i++) {
       for (var j = -1; j < 1; j++) {
-        if (this.matriz[x + i][y + j] == "*" && (x != 0 && y != 0)) neighbours++;
+        if (this.matriz[x + i][y + j] == "*" && (x != 0 && y != 0)) 
+            neighbours++;
       }
     }
 
