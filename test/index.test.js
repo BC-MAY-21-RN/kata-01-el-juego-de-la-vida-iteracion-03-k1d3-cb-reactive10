@@ -22,6 +22,12 @@ test(`should be initializated with 4 columns and 3 rows`, () => {
   expect(m.rows).toBe(3);
 });
 
+test(`should be initializated with 8 columns and 5 rows`, () => {
+  const m = new Matrix(8, 5);
+  expect(m.columns).toBe(8);
+  expect(m.rows).toBe(5);
+});
+
 test("should fill the matrix with sexteen dead cells ", () => {
   const m = new Matrix(4, 4);
   m.crearMatriz();
@@ -50,6 +56,21 @@ test("should fill the matrix with nine dead cells ", () => {
     }
   }
   expect(count).toBe(9);
+});
+
+test("should fill the matrix with 4 dead cells ", () => {
+  const m = new Matrix(2, 2);
+  m.crearMatriz();
+  const matrixFilled = m.llenarMatriz();
+  let count = 0;
+  for (let i = 0; i < 2; i++) {
+    for (let j = 0; j < 2; j++) {
+      if (matrixFilled[i][j] == ".") {
+        count++;
+      }
+    }
+  }
+  expect(count).toBe(4);
 });
 
 test("should insert 3 alive cells", () => {
