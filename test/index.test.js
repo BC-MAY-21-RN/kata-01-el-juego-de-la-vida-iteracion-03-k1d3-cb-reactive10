@@ -1,4 +1,4 @@
-const { loadPartialConfig } = require("@babel/core");
+
 const Matrix = require("../models/matrix");
 let matriz = new Matrix(2, 2);
 
@@ -92,7 +92,7 @@ test("should insert 2 alive cells", () => {
       }
     }
   }
-  expect(count).toBe(3);
+  expect(count).toBe(2);
 });
 
 test("should insert 3 alive cells", () => {
