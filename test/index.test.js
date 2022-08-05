@@ -73,6 +73,28 @@ test("should fill the matrix with 4 dead cells ", () => {
   expect(count).toBe(4);
 });
 
+test("should insert 2 alive cells", () => {
+  let aliveCells = [
+    [1, 1],
+    [2, 3],
+  ];
+  const COLUMNS = 8;
+  const ROWS = 4;
+  const m = new Matrix(COLUMNS, ROWS);
+  m.crearMatriz();
+  m.llenarMatriz();
+  let count = 0;
+  const matrixFilled = m.fillLiveCells(aliveCells);
+  for (let i = 0; i < ROWS; i++) {
+    for (let j = 0; j < COLUMNS; j++) {
+      if (matrixFilled[i][j] == "*") {
+        count++;
+      }
+    }
+  }
+  expect(count).toBe(3);
+});
+
 test("should insert 3 alive cells", () => {
   let aliveCells = [
     [1, 1],
